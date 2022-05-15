@@ -1,15 +1,15 @@
-#!/bin/sh 
+#!/bin/bash
+
 clear
-echo "A shell script to find the largest of two numbers"
- echo "Enter the first number: "
- read num1
+echo "Enter the first number: "
+read n1
 
- echo "Enter the second number: "
- read num2
+echo "Enter the second number: "
+read n1
 
- if test $num1 -gt $num2 
+ if(($n1 -gt $n2))
  then 
- echo "First number is greater!"
+	echo "$n1 is greater."
  else 
- echo "Second number is greater!"
+	echo "$n2 is greater."
  fi
