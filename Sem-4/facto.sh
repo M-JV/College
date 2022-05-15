@@ -1,13 +1,17 @@
 #!/bin/bash
+clear
 
-echo "Enter a number"
-read num                     
-fact=1                    
+echo "Enter the number: "
+read n
+fact=1
+i=0
+clear
+while [ $i -lt $n ] 
+do
+	i=$(($i+1))
+	fact=$(($i*$fact))	
+	
+	echo "$fact"
+done
 
-
-    for((i=2;i<=num;i++))
-    {
-    fact=$((fact * i)) 
-    }
-
-echo $fact
+ 
