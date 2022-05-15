@@ -1,11 +1,13 @@
-#!/bin/sh 
-clear
- echo "Enter a number : "
+#!/bin/bash
+ 
+ clear
+ echo "Enter the number to be checked: "
  read n
-	rem=$(( $n % 2 ))
+ 
+ rem=$(($n%2))
  if [ $rem -eq 0 ]
-then
-	echo "$n is even number"
-else
-	echo "$n is odd number"
-fi
+ then 
+ echo "$n is even."
+ else
+ echo "$n is odd."
+ fi 
