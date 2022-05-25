@@ -1,13 +1,21 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+
 int main()
 {
+    pid_t p;
+    p = fork();
 
-	// make two process which run same
-	// program after this instruction
-	fork();
+        if(p == -1){
+            printf("Error!\n");
+        }
 
-	printf("Hello world!\n");
-	return 0;
+        else if(p == 0){
+            printf("We are in child process!\n");
+        }
+
+        else
+            printf("We are in parent process!\n");
 }
+
