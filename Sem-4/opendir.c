@@ -1,23 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <dirent.h>
-#include <errno.h>
 
-int main(int argc, char *argv[])
+int main(void)
 {
-    DIR *dp;
-    struct dirent *dirp;
+    struct dirent *de;  // Pointer for directory entry
 
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./program directory_name\n");
-        exit(EXIT_FAILURE);
+    // opendir() returns a pointer of DIR type.
+    DIR *dr = opendir(".");
+
+    if (dr == NULL)  // opendir returns NULL if couldn't open directory
+    {
+        printf("Could not open current directory" );
+        return 0;
     }
+    // for readdir()
+    while ((de = readdir(dr)) != NULL)
+            printf("%s\n", de->d_name);
 
-    dp = opendir(argv[1]);
-
-    while ((dirp = readdir(dp)) != NULL)
-        printf("%s\n", dirp->d_name);
-
-    closedir(dp);
-    exit(EXIT_SUCCESS);
+    closedir(dr);
+    return 0;
 }
