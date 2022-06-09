@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
+int main() {
 	struct stat sb;
 
     printf("File name:  stat3.c\n");
